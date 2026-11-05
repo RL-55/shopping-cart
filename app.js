@@ -75,28 +75,33 @@ shoppingRemove('Helium');
 
 console.log(cart)
 shoppingTotal()
-\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 console.log("test")
-box=document.querySelector(".random")
 
-y=document.querySelector(".text")
-y.style.backgroundColor="rgb(0,255,0)"
 function getRGB(){
-    let r = Math.floor(Math.random()*256)
-    let g = Math.floor(Math.random()*256)
-    let b = Math.floor(Math.random()*256)
+    let r = Math.floor(Math.random()* 256);
+    let g = Math.floor(Math.random()* 256);
+    let b = Math.floor(Math.random()* 256);
+    const box = document.querySelector(".box");
     box.style.backgroundColor = `rgb(${r},${g},${b})`
+    header.textContent = `rgb(${r},${g},${b})`;
 }
-x=document.getElementsByClassName("click")
-console.log(x)
-document.getElementsByClassName("click").addEventListener("click", function(){
-    getRGB()
-})
+
 function inject(){
-    z=document.querySelector(".box")
-    x.insertAdjacentHTML("afterbegin", '<h2 class="test"> Inserted</h2>')
+    const box = document.querySelector(".box");
+    box.insertAdjacentHTML("afterbegin", `<h2 class="test>Inserted</h2>`)
 }
+
+
+
+const header= document.getElementById("color");
+let x = 0;
+document.getElementById("btn").addEventListener("click", function(){
+    getRGB();
+    inject("HIIIII");
+});
+
 //select the contianer
 //create inject function that takes argument for item
 //inject 1 full HTML card into the container
