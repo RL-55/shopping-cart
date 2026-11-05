@@ -1,0 +1,46 @@
+HTML,
+body,
+*{
+    font-size: 1rem;
+    box-sizing:border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.random{
+    background-color: red;
+    padding: 3rem;
+    width: 30rem;
+    height: 44rem;
+}
+
+.text{
+    margin-top: 1rem;
+    width: 50vh;
+}
+.container{
+    height: 100vh;
+    background-color: aliceblue;
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.box{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: red;
+    padding: 3rem;
+    width: 30rem;
+    height: 44rem;
+    margin-bottom: 5rem;
+    margin-right: 1rem;
+}
+.box h2{
+    margin-bottom: 1rem;
+}
+
