@@ -32,12 +32,14 @@ shop=[
     {element:"Tungsten", price:16.01, abbreviation:"W",  atomicNumber:74},
     {element:"Gold", price:20430.96, abbreviation:"Au",  atomicNumber:79},
 ]
-cart=[]
+/* cart=[]
 cost=0
-cartfiller=[]
+cartfiller=[] */
 function shoppingEnter(){
     shop.forEach(shop => {console.log(shop.element)});
 }
+shoppingEnter()
+/*
 function shoppingAdd(z){
     shop.forEach(function(shop){
         if(z===shop.element){
@@ -60,7 +62,7 @@ function shoppingRemove(y){
     })
     cart = []
     cartfiller.forEach(cartfiller => {cart.push(cartfiller)});
-}
+} 
 function shoppingTotal(){
     cart.forEach(cart => {console.log(cart)});
     console.log(cost)
@@ -74,7 +76,7 @@ shoppingAdd('Helium');
 shoppingRemove('Helium');
 
 console.log(cart)
-shoppingTotal()
+shoppingTotal() */
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 console.log("test")
@@ -90,16 +92,17 @@ function getRGB(){
 
 function inject(){
     const box = document.querySelector(".box");
-    box.insertAdjacentHTML("afterbegin", `<h2 class="test>Inserted</h2>`)
+    shop.forEach(shop => {
+    box.insertAdjacentHTML("afterbegin", `Element ${shop.element} ${shop.price} ${shop.abbreviation} ${shop.atomicNumber}`)
+    });
 }
 
 
 
 const header= document.getElementById("color");
-let x = 0;
 document.getElementById("btn").addEventListener("click", function(){
     getRGB();
-    inject("HIIIII");
+    inject();
 });
 
 //select the contianer
