@@ -5,10 +5,32 @@ body,
     box-sizing:border-box;
     margin: 0;
     padding: 0;
+    background-color: rgb(235,196,231);
 }
 
-.box{
-    width:600px;
-    height:600px;
+.cardsmenu{
+    height: 100vh;
+    width: 100%;
+    background-color: rgb(235,196,231);
+    display: flex;
+    justify-content: center;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
+.cards{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(195,128,145);
+    padding: 3rem;
+    width: 30rem;
+    height: 44rem;
+    margin-bottom: 5rem;
+    margin-right: 1rem;
+}
+.cards h2{
+    margin-bottom: 1rem;
+}

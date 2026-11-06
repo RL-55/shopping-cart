@@ -35,10 +35,6 @@ shop=[
 /* cart=[]
 cost=0
 cartfiller=[] */
-function shoppingEnter(){
-    shop.forEach(shop => {console.log(shop.element)});
-}
-shoppingEnter()
 /*
 function shoppingAdd(z){
     shop.forEach(function(shop){
@@ -91,17 +87,19 @@ function getRGB(){
 }
 
 function inject(){
-    const box = document.querySelector(".box");
+    const cardmenu = document.querySelector(".cardsmenu");
     shop.forEach(shop => {
-    box.insertAdjacentHTML("afterbegin", `Element ${shop.element} ${shop.price} ${shop.abbreviation} ${shop.atomicNumber}`)
+    cardmenu.insertAdjacentHTML("afterbegin", `<div id="cards"> 
+            <h2 class="title">${shop.element}</h2>
+            <p class="desc">${shop.abbreviation} ${shop.atomicNumber}</p>
+            <p class="price">${shop.price}</p>
+        </div>`)
     });
 }
 
 
 
-const header= document.getElementById("color");
 document.getElementById("btn").addEventListener("click", function(){
-    getRGB();
     inject();
 });
 
