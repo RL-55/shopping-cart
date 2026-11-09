@@ -89,10 +89,10 @@ function getRGB(){
 function inject(){
     const cardmenu = document.querySelector(".cardsmenu");
     shop.forEach(shop => {
-    cardmenu.insertAdjacentHTML("afterbegin", `<div id="cards"> 
+    cardmenu.insertAdjacentHTML("beforeend", `<div id="cards"> 
             <h2 class="title">${shop.element}</h2>
             <p class="desc">${shop.abbreviation} ${shop.atomicNumber}</p>
-            <p class="price">${shop.price}</p>
+            <p class="price">$${shop.price}</p>
         </div>`)
     });
 }
