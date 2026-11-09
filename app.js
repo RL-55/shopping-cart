@@ -75,29 +75,16 @@ console.log(cart)
 shoppingTotal() */
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-console.log("test")
-
-function getRGB(){
-    let r = Math.floor(Math.random()* 256);
-    let g = Math.floor(Math.random()* 256);
-    let b = Math.floor(Math.random()* 256);
-    const box = document.querySelector(".box");
-    box.style.backgroundColor = `rgb(${r},${g},${b})`
-    header.textContent = `rgb(${r},${g},${b})`;
-}
-
 function inject(){
     const cardmenu = document.querySelector(".cardsmenu");
     shop.forEach(shop => {
-    cardmenu.insertAdjacentHTML("beforeend", `<div id="cards"> 
+    cardmenu.insertAdjacentHTML("beforeend", `<div class="card"> 
             <h2 class="title">${shop.element}</h2>
             <p class="desc">${shop.abbreviation} ${shop.atomicNumber}</p>
             <p class="price">$${shop.price}</p>
         </div>`)
     });
 }
-
-
 
 document.getElementById("btn").addEventListener("click", function(){
     inject();
