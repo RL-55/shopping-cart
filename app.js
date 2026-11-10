@@ -11,7 +11,7 @@ Provide users a total for their purchase
 All items shown and filtered on screen
 Shopping cart with add/remove buttons and total order price */
 shop=[
-    {element:"Oxygen", price:0.02, abbreviation:"O",  atomicNumber:8},
+    {element:"Oxygen", price:0.02, abbreviation:"O",  atomicNumber:8, image:'<img src=""><>'},
     {element:"Calcium", price:1.64, abbreviation:"Ca",  atomicNumber:20},
     {element:"Copper", price:6.57, abbreviation:"Cu",  atomicNumber:29},
     {element:"Strontium", price:9.44, abbreviation:"Sr",  atomicNumber:38},
