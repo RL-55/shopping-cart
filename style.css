@@ -8,7 +8,7 @@ body,
 }
 
 .cardsmenu{
-    height: 100vh;
+    height: auto;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -29,4 +29,8 @@ body,
     height: 29rem;
     margin-bottom: 5rem;
     margin-right: 2rem;
+}
+.image{
+    height: auto;
+    width: 100%;
 }
