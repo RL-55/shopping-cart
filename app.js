@@ -26,7 +26,7 @@ shop=[
     {element:"Aluminum", price:1.39, abbreviation:"Al",  atomicNumber:13, image:"Aluminum.png"},
     {element:"Silicon", price:0.77, abbreviation:"Si",  atomicNumber:14, image:"Silicon.png"},
     {element:"Titanium", price:5.17, abbreviation:"Ti",  atomicNumber:22, image:"Titanium.png"},
-    {element:"Iron", price:0.19, abbreviation:"Fe",  atomicNumber:26, image:"Iron.png"},
+    {element:"Iron", price:0.19, abbreviation:"Fe",  atomicNumber:26, image:"Iron.jpg"},
     {element:"Nickel", price:6.31, abbreviation:"Ni",  atomicNumber:28, image:"Nickel.png"},
     {element:"Silver", price:236.32, abbreviation:"Ag",  atomicNumber:47, image:"Silver.png"},
     {element:"Tungsten", price:16.01, abbreviation:"W",  atomicNumber:74, image:"Tungsten.png"},
