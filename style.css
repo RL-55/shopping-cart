@@ -19,6 +19,7 @@ body,
 }
 
 .card{
+    border-radius: 3rem;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -27,10 +28,40 @@ body,
     padding: 3rem;
     width: 18rem;
     height: 29rem;
+    margin-top: 1rem;
     margin-bottom: 5rem;
     margin-right: 2rem;
 }
 .image{
     height: auto;
     width: 100%;
+}
+.buy{
+    border-radius: 1rem;
+    padding: 0.5rem;
+    margin-top: 2rem;
+    justify-content: center;
+    align-items: end;
+}
+.cart{
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(235,196,231)
+}
+.cart p{
+        border-radius: 3rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(195,128,145);
+    padding: 3rem;
+    width: 18rem;
+    height: 29rem;
+    margin-top: 1rem;
+    margin-bottom: 5rem;
+    margin-right: 2rem;
 }

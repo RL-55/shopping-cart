@@ -32,6 +32,7 @@ shop=[
     {element:"Tungsten", price:16.01, abbreviation:"W",  atomicNumber:74, image:"Tungsten.png"},
     {element:"Gold", price:20430.96, abbreviation:"Au",  atomicNumber:79, image:"Gold.jpg"},
 ]
+cart={item:"", total:0}
 /* cart=[]
 cost=0
 cartfiller=[] */
@@ -79,21 +80,25 @@ function inject(){
     const cardmenu = document.querySelector(".cardsmenu");
     shop.forEach(shop => {
     cardmenu.insertAdjacentHTML("beforeend", `
-        <div class="card"> 
+        <div class="card" data-item="${shop.element}"> 
             <h2 class="title">${shop.element}</h2>
             <img class ="image" src="img/${shop.image}" alt="">
-            <p class="desc">Abbreviation:${shop.abbreviation}</p>
-            <p class="desc">Atomic Number:${shop.atomicNumber}</p>
+            <p class="desc">Abbreviation: ${shop.abbreviation}</p>
+            <p class="desc">Atomic Number: ${shop.atomicNumber}</p>
             <p class="price">$${shop.price}</p>
+            <button id="buy">Add to Cart</button>
         </div>
         `)
     });
 }
+inject();
 
-document.getElementById("btn").addEventListener("click", function(){
-    inject();
-});
-
+const buttons=document.querySelectorAll("button")
+buttons.forEach((button) => 
+  button.addEventListener("click", function (event){
+    console.log(event.target.closest(".card").getAttribute("data-item"));
+})
+);
 //select the contianer
 //create inject function that takes argument for item
 //inject 1 full HTML card into the container
