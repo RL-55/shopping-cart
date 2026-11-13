@@ -32,7 +32,7 @@ shop=[
     {element:"Tungsten", price:16.01, abbreviation:"W",  atomicNumber:74, image:"Tungsten.png"},
     {element:"Gold", price:20430.96, abbreviation:"Au",  atomicNumber:79, image:"Gold.jpg"},
 ]
-cart={}
+cart={items:"", price:0}
 /* cart=[]
 cost=0
 cartfiller=[] */
@@ -96,7 +96,8 @@ inject();
 const buttons=document.querySelectorAll("button")
 buttons.forEach((button) => 
   button.addEventListener("click", function (event){
-    console.log(event.target.closest(".card").getAttribute("data-item"));
+    const nextItem=event.target.closest(".card").getAttribute("data-item")
+    console.log(nextItem)
 })
 );
 //select the contianer

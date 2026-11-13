@@ -43,25 +43,24 @@ body,
     justify-content: center;
     align-items: end;
 }
-.cart{
-    height: auto;
+.cartmenu{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: rgb(235,196,231)
 }
-.cart p{
-        border-radius: 3rem;
+.cart{
+    border-radius: 3rem;
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
     background-color: rgb(195,128,145);
-    padding: 3rem;
-    width: 18rem;
-    height: 29rem;
-    margin-top: 1rem;
-    margin-bottom: 5rem;
-    margin-right: 2rem;
+    width: 90%;
+    height: auto;
 }
