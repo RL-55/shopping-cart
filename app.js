@@ -32,7 +32,7 @@ shop=[
     {element:"Tungsten", price:16.01, abbreviation:"W",  atomicNumber:74, image:"Tungsten.png"},
     {element:"Gold", price:20430.96, abbreviation:"Au",  atomicNumber:79, image:"Gold.jpg"},
 ]
-cart={item:"", total:0}
+cart={}
 /* cart=[]
 cost=0
 cartfiller=[] */
