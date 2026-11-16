@@ -62,5 +62,13 @@ body,
     align-items: center;
     background-color: rgb(195,128,145);
     width: 90%;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
     height: auto;
+}
+.remove{
+    margin-right: 1rem;
+    margin-left: 1rem;
+    background-color: white;
+    color: black;
 }
