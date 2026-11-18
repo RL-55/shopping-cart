@@ -101,16 +101,19 @@ buttons.forEach((button) =>
         cart.items += `${nextItem} `;
         cart.price += parseFloat(nextCost);
         const x = document.querySelector(".cart");
-        check = false
-        console.log(document.querySelector(".item"))
-        cart.forEach(item => console.log(item))
-
-            x.insertAdjacentHTML("beforeend", `
-                <p class="item" id="${nextItem}" data-bought=1>${nextItem} $${nextCost}
-                <button id="remove">x</button> </p>
-         `)}
-)
-);
+        z=true
+        const y = document.querySelectorAll(".item")
+        y.forEach(items =>  shop.forEach(check => console.log(items) /* {if(items === check){
+            console.log(item)
+            z= false
+        }} */
+    ) );
+        if (z === true)
+        x.insertAdjacentHTML("beforeend",
+            `<p class="item" id="${nextItem}">${nextItem} $${nextCost}
+            <button id="remove">x</button> </p>`)
+        }
+));
 
 //select the contianer
 //create inject function that takes argument for item
