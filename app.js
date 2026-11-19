@@ -100,21 +100,30 @@ buttons.forEach((button) =>
         const nextCost=event.target.closest(".card").getAttribute("data-cost")
         cart.items += `${nextItem} `;
         cart.price += parseFloat(nextCost);
-        const x = document.querySelector(".cart");
-        z=true
-        const y = document.querySelectorAll(".item")
-        y.forEach(items =>  shop.forEach(check => console.log(items) /* {if(items === check){
-            console.log(item)
-            z= false
-        }} */
-    ) );
-        if (z === true)
-        x.insertAdjacentHTML("beforeend",
-            `<p class="item" id="${nextItem}">${nextItem} $${nextCost}
-            <button id="remove">x</button> </p>`)
-        }
+        const cartCard = document.querySelector(".cart");
+        noDupe = true
+        const currentItems = document.querySelectorAll(".item")
+        currentItems.forEach(items =>  shop.forEach(check =>  {if(items.id === check.element){
+            const itemDupe = document.getElementById(`${nextItem}`)
+            console.log(itemDupe)
+            console.log(itemDupe.dataset.count)
+            itemDupe.dataset.count ++
+            noDupe= false
+        }} 
+    ));
+        if (noDupe === true)
+        cartCard.insertAdjacentHTML("beforeend",`
+            <p class="item" id="${nextItem}" data-count=1>${nextItem} $${nextCost}
+            <button id="remove">x</button> </p>
+        `)
+    }
 ));
-
+document.querySelector("form").addEventListener("submit", function(event){
+    event.preventDefault();
+    console.log("submitted form");
+    let c = document.querySelector("#coupon");
+    console.log(c.textContent)
+})
 //select the contianer
 //create inject function that takes argument for item
 //inject 1 full HTML card into the container
