@@ -32,7 +32,7 @@ shop=[
     {element:"Tungsten", price:16.01, abbreviation:"W",  atomicNumber:74, image:"Tungsten.png"},
     {element:"Gold", price:20430.96, abbreviation:"Au",  atomicNumber:79, image:"Gold.jpg"},
 ]
-cart={items:[], price:0}
+cart={price:0,}
 /* cart=[]
 cost=0
 cartfiller=[] */
@@ -88,36 +88,46 @@ function inject(){
             <p class="price">$${shop.price}</p>
             <button id="buy">Add to Cart</button>
         </div>
-        `)
-    });
+        `)    });
+    const subtotal = document.querySelector(".total");
+    subtotal.insertAdjacentHTML("beforeend",`<p class="total-title">Subtotal: $${cart.price}</p>`)
 }
 inject();
 
+const buttons = document.querySelectorAll("button");
+buttons.forEach((button)=>
+  button.addEventListener("click",function(event){
+    const nextItem = (event.target.closest(".card").getAttribute("data-item"));
+    const nextPrice = (event.target.closest(".card").getAttribute("data-cost"));
+    cart.items += ` ${nextItem}`
+    cart.price += parseInt(nextPrice)
+    const x = document.querySelector(".cart");
+    x.insertAdjacentHTML("beforeend",
+        `<p id="`${nextItem}`">${nextItem} $${nextPrice}
+        <button id="remove">x</button> </p>`)
+    const newTotal = document.querySelector('.total-title');
+    newTotal.textContent = `Subtotal: $${cart.price}`;
+})
+);
+
+
+
+
+
+
+/* 
 const buttons=document.querySelectorAll("button")
 buttons.forEach((button) => 
     button.addEventListener("click", function (event){
         const nextItem=event.target.closest(".card").getAttribute("data-item")
         const nextCost=event.target.closest(".card").getAttribute("data-cost")
-        cart.items += `${nextItem} `;
-        cart.price += parseFloat(nextCost);
-        const cartCard = document.querySelector(".cart");
-        noDupe = true
-        const currentItems = document.querySelectorAll(".item")
-        currentItems.forEach(items =>  shop.forEach(check =>  {if(items.id === check.element){
-            const itemDupe = document.getElementById(`${nextItem}`)
-            console.log(itemDupe)
-            console.log(itemDupe.dataset.count)
-            itemDupe.dataset.count ++
-            noDupe= false
-        }} 
-    ));
-        if (noDupe === true)
-        cartCard.insertAdjacentHTML("beforeend",`
-            <p class="item" id="${nextItem}" data-count=1>${nextItem} $${nextCost}
-            <button id="remove">x</button> </p>
-        `)
+        console.log(nextCost)
+        console.log(nextItem)
+        cart += `{element:${nextItem}, price:${nextCost}, amount:1}, `
+        cart.price += parseFloat(nextCost)
+        console.log(cart)
     }
-));
+)); */
 document.querySelector("form").addEventListener("submit", function(event){
     event.preventDefault();
     console.log("submitted form");
