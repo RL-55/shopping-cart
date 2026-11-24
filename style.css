@@ -66,6 +66,12 @@ body,
     padding-bottom: 1rem;
     height: auto;
 }
+.item{
+    display: flex;
+    flex-direction: row;
+    padding-top: 1rem;
+    width: auto;    
+}
 .remove{
     margin-right: 1rem;
     margin-left: 1rem;

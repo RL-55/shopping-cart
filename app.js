@@ -97,17 +97,33 @@ inject();
 const buttons = document.querySelectorAll("button");
 buttons.forEach((button)=>
   button.addEventListener("click",function(event){
+    z=false
+
+
     const nextItem = (event.target.closest(".card").getAttribute("data-item"));
     const nextPrice = (event.target.closest(".card").getAttribute("data-cost"));
     cart.items += ` ${nextItem}`
     cart.price += parseInt(nextPrice)
+
+
+        shop.forEach(shop => {
+        console.log(shop.element)
+         y = document.querySelectorAll('[data-buy]');
+         y.forEach(y =>{
+            if(y.dataset.buy){
+                z=true
+            }
+         })
+    })
+
+    if (z=false){
     const x = document.querySelector(".cart");
     x.insertAdjacentHTML("beforeend",
-        `<p id="`${nextItem}`">${nextItem} $${nextPrice}
+        `<p id="${nextItem}" data-buy="${nextItem}"> ${nextItem} $${nextPrice}
         <button id="remove">x</button> </p>`)
     const newTotal = document.querySelector('.total-title');
     newTotal.textContent = `Subtotal: $${cart.price}`;
-})
+}})
 );
 
 
