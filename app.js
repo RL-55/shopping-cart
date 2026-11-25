@@ -32,7 +32,7 @@ shop=[
     {element:"Tungsten", price:16.01, abbreviation:"W",  atomicNumber:74, image:"Tungsten.png"},
     {element:"Gold", price:20430.96, abbreviation:"Au",  atomicNumber:79, image:"Gold.jpg"},
 ]
-cart={price:0,}
+cart={items:[],price:0}
 /* cart=[]
 cost=0
 cartfiller=[] */
@@ -97,34 +97,34 @@ inject();
 const buttons = document.querySelectorAll("button");
 buttons.forEach((button)=>
   button.addEventListener("click",function(event){
-    z=false
-
-
     const nextItem = (event.target.closest(".card").getAttribute("data-item"));
     const nextPrice = (event.target.closest(".card").getAttribute("data-cost"));
-    cart.items += ` ${nextItem}`
-    cart.price += parseInt(nextPrice)
-
-
-        shop.forEach(shop => {
-        console.log(shop.element)
-         y = document.querySelectorAll('[data-buy]');
-         y.forEach(y =>{
-            if(y.dataset.buy){
-                z=true
-            }
-         })
-    })
-
-    if (z=false){
+    cart.price += parseFloat(nextPrice)
+    listItems = cart.items
+    console.log(listItems)
+    dupeItems = false
+    listItems.forEach(cart =>{
+        if(nextItem === cart){
+            console.log('dupe')
+            const change = document.querySelector(`#${nextItem}`)
+            change.dataset.amount ++
+            change.textContent= `${nextItem} $${nextPrice} x${change.dataset.amount}`  
+            change.insertAdjacentHTML("beforeend", `<button id="remove">x</button> `)
+            dupeItems = true
+            const newTotal = document.querySelector('.total-title');
+            newTotal.textContent = `Subtotal: $${cart.price}`;
+        } else{
+            console.log('not dupe')
+    }})
+  if(dupeItems === false){
     const x = document.querySelector(".cart");
     x.insertAdjacentHTML("beforeend",
-        `<p id="${nextItem}" data-buy="${nextItem}"> ${nextItem} $${nextPrice}
+        `<p id="${nextItem}" data-buy="${nextItem}" data-amount=1> ${nextItem} $${nextPrice}
         <button id="remove">x</button> </p>`)
     const newTotal = document.querySelector('.total-title');
     newTotal.textContent = `Subtotal: $${cart.price}`;
-}})
-);
+    cart.items.push(`${nextItem}`)
+    }}));
 
 
 
